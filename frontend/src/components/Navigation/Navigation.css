@@ -1,0 +1,30 @@
+.profile-dropdown {
+  position: absolute;
+  background: rgb(227, 227, 227);
+  border: 10px black;
+  box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
+  padding: 5px;
+  right: 8px;
+  left: auto;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-begin;
+  width: 100px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-button-li {
+  cursor: pointer;
+}
