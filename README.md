@@ -35,7 +35,7 @@ closing the modal. Time to add some images!
 
 This first phase describes how to set up a __public__ folder within an otherwise
 private AWS bucket using bucket and user policies. If you already know how to do
-this, feel free to skip to "Phase 2 (Backend)" in the next README.
+this, feel free to skip to "Phase 2: Backend" in the next README.
 
 ### Create an AWS S3 bucket
 
