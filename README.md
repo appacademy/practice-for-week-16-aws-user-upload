@@ -13,7 +13,8 @@ The app uses the PERN stack:
 
 Its basic functionality has already been built out. To see what the app
 currently does, download the starter repo from the `Download Project` button at
-the bottom of this page. To start your server, run the following commands in the __backend__ folder:
+the bottom of this page. To start your server, run the following commands in the
+__backend__ folder:
 
 ```sh
 cp .env.example .env
