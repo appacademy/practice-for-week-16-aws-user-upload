@@ -139,7 +139,9 @@ public" message that was there before.
 ### Create an IAM user
 
 Now you are going to create a new [Identity and Access Management (IAM)][IAM]
-user that your application will use to access the private areas of your bucket.
+user that your application will use to access the private areas of your bucket
+and write/save to the public areas.
+
 An IAM user is a user that you create within your account, a sort of subset of
 your main account. Unlike a full root user, an IAM user will have limited access
 and permissions within the account. You define those permissions through user
@@ -161,15 +163,14 @@ AWS toolbar.
 ![aws-favoriting]
 
 On the IAM users console, click the `Add users` button. Name your new user
-`<your-app-name>-admin` (or something similar) and select `Access key -
-Programmatic access` as the AWS credential type. Proceed to `Next: Permissions`.
+`<your-app-name>-admin` (or something similar) and click `Next`.
 
 Now you need to set the security policy for your new user, which controls how
-they will be allowed to connect. Click `Attach existing policies directly` and
-then `Create Policy`. This will open a new tab.
+they will be allowed to connect. Select `Attach policies directly` and then
+`Create Policy`. This will open a new tab.
 
-In the new browser tab, click the `JSON` tab and paste in the following,
-fully replacing any sample text in the editor:
+In the new browser tab, click the `JSON` tab and paste in the following, fully
+replacing any sample text in the editor:
 
 ```json
 {
@@ -198,19 +199,27 @@ want. The following three key-value pairs then effectively `Allow`--not
 
 When you have entered your policy, click `Next: Tags` and then `Next: Review`.
 Give the policy whatever name you like (e.g., `s3-access-to-<name-of-project>`).
-After you save and create the policy, head back to the other tab where you are
-creating a new IAM user.
+Click `Create policy` and head back to the other tab where you are creating a
+new IAM user.
 
-Click the refresh button all the way to the right of the `Create Policy` button,
-then search for the policy that you just created. Check that policy then head
-over to the next step. You can skip additional tags. Create the user.
+Click the refresh button to the left of the `Create Policy` button, then search
+for the policy that you just created. Check that policy, then click `Next`. On
+the next page, click `Create user`. This should return you to the users index
+with a green "User created successfully" banner.
 
-After you create the user, you will see a page with the new user's `Access Key
-ID` and `Secret Access Key`. These are the user's security credentials, and they
-will never be accessible again once you leave this page. (If you do leave the
-page before securing the credentials, you will need to delete the user and
-create a new one.) You will use these two values at the beginning of the next
-phase when you start to set up your backend, so keep them handy.
+Click `View user` in the banner or the name of the user you just created in the
+`Users` list. On the user's show page, go to the `Security credentials` tab.
+Scroll down to `Access keys` and click `Create access key`. On the ensuing `best
+practices` page, select `Application running outside AWS` or `Other`--it doesn't
+matter which one you choose--and click `Next`. You can skip setting more tags
+and just click to `Create access key`.
+
+On the next page, you will see the new user's `Access Key ID` and `Secret Access
+Key`. These are the user's security credentials, and they will never be
+accessible again once you leave this page. (If you do leave the page before
+securing the credentials, you will need to delete the key and create a new one.)
+You will use these two values at the beginning of the next phase when you start
+to set up your backend, so keep them handy.
 
 Click to download the __.csv__ file. Store this somewhere safe on your computer.
 **NEVER PUSH THIS FILE (OR ITS CONTENTS) TO GITHUB OR POST IT ANYWHERE PUBLIC!**
